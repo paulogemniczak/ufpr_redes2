@@ -1,0 +1,75 @@
+============================================================================================
+Inicio da execucao do cliente 9999: programa implementa protocolo 2PC.
+Daniele Harumi Ito & Paulo Ricardo Gemniczak - Universidade Federal do Parana
+============================================================================================
+
+2015-06-05 19:31:04.392368 -> Esperando uma conexao...
+2015-06-05 19:31:28.173278 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:31:28.179129 -> Recebi a mensagem: SOMA 50.0
+2015-06-05 19:31:28.185158 -> Enviando OK
+2015-06-05 19:31:28.191268 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:31:28.197529 -> Esperando uma conexao...
+2015-06-05 19:31:28.296851 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:31:28.302992 -> Recebi a mensagem: COMMIT
+2015-06-05 19:31:28.309027 -> 0.0 + 50.0 = 50.0
+2015-06-05 19:31:28.315049 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:31:28.320967 -> Esperando uma conexao...
+2015-06-05 19:31:45.571939 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:31:45.577962 -> Recebi a mensagem: MULTIPLICACAO 3.0
+2015-06-05 19:31:45.583600 -> Enviando OK
+2015-06-05 19:31:45.589632 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:31:45.595807 -> Esperando uma conexao...
+2015-06-05 19:31:45.692650 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:31:45.698728 -> Recebi a mensagem: COMMIT
+2015-06-05 19:31:45.704885 -> 50.0 * 3.0 = 150.0
+2015-06-05 19:31:45.710152 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:31:45.716113 -> Esperando uma conexao...
+2015-06-05 19:31:53.857795 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:31:53.863720 -> Recebi a mensagem: SUBTRACAO 3.54
+2015-06-05 19:31:53.869419 -> Enviando OK
+2015-06-05 19:31:53.875565 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:31:53.881547 -> Esperando uma conexao...
+2015-06-05 19:31:53.977421 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:31:53.983451 -> Recebi a mensagem: COMMIT
+2015-06-05 19:31:53.989350 -> 150.0 - 3.54 = 146.46
+2015-06-05 19:31:53.995385 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:31:54.001647 -> Esperando uma conexao...
+2015-06-05 19:31:59.964170 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:31:59.969999 -> Recebi a mensagem: DIVISAO 2.88
+2015-06-05 19:31:59.975888 -> Enviando OK
+2015-06-05 19:31:59.981774 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:31:59.987684 -> Esperando uma conexao...
+2015-06-05 19:32:00.084044 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:32:00.089941 -> Recebi a mensagem: COMMIT
+2015-06-05 19:32:00.096223 -> 146.46 / 2.88 = 50.8541666667
+2015-06-05 19:32:00.102322 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:32:00.108268 -> Esperando uma conexao...
+2015-06-05 19:32:03.875676 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:32:03.881844 -> Recebi a mensagem: DIVISAO 0.0
+2015-06-05 19:32:03.887711 -> Enviando OK
+2015-06-05 19:32:03.893619 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:32:03.899664 -> Esperando uma conexao...
+2015-06-05 19:32:03.994567 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:32:04.000584 -> Recebi a mensagem: COMMIT
+2015-06-05 19:32:04.006375 -> Nao eh possivel dividir por 0.
+2015-06-05 19:32:04.012047 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:32:04.017956 -> Esperando uma conexao...
+2015-06-05 19:32:23.339922 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:32:23.348292 -> Recebi a mensagem: SOMA 100.0
+2015-06-05 19:32:23.354201 -> Enviando OK
+2015-06-05 19:32:23.360414 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:32:23.366322 -> Esperando uma conexao...
+2015-06-05 19:32:23.457492 -> Conectei com o cliente: 10.254.223.34
+2015-06-05 19:32:23.463510 -> Recebi a mensagem: ABORT
+2015-06-05 19:32:23.469135 -> Encerrei a conexao com o cliente: 10.254.223.34
+2015-06-05 19:32:23.475228 -> Esperando uma conexao...
+2015-06-05 19:32:28.052978 -> Conectei com o cliente: 10.254.223.33
+2015-06-05 19:32:28.059131 -> Recebi a mensagem: SOMA 500.0
+2015-06-05 19:32:28.065026 -> Enviando OK
+2015-06-05 19:32:28.070945 -> Encerrei a conexao com o cliente: 10.254.223.33
+2015-06-05 19:32:28.076836 -> Esperando uma conexao...
+2015-06-05 19:32:28.173185 -> Conectei com o cliente: 10.254.223.33
+2015-06-05 19:32:28.179473 -> Recebi a mensagem: COMMIT
+2015-06-05 19:32:28.185113 -> 50.8541666667 + 500.0 = 550.854166667
+2015-06-05 19:32:28.190854 -> Encerrei a conexao com o cliente: 10.254.223.33
+2015-06-05 19:32:28.196767 -> Esperando uma conexao...

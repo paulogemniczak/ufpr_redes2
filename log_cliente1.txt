@@ -1,0 +1,31 @@
+============================================================================================
+Inicio da execucao do cliente h29: programa implementa protocolo 2PC.
+Daniele Harumi Ito & Paulo Ricardo Gemniczak - Universidade Federal do Parana
+============================================================================================
+
+2015-06-05 19:32:22.998879 -> Conectando ao servidor h28 na porta 8888
+2015-06-05 19:32:23.012541 -> Enviando a mensagem: SOMA 500.0
+2015-06-05 19:32:23.031144 -> Recebi a mensagem: OK
+2015-06-05 19:32:23.037181 -> Fechando socket
+2015-06-05 19:32:28.048443 -> Conectando ao servidor h50 na porta 9999
+2015-06-05 19:32:28.056012 -> Enviando a mensagem: SOMA 500.0
+2015-06-05 19:32:28.074100 -> Recebi a mensagem: OK
+2015-06-05 19:32:28.080431 -> Fechando socket
+2015-06-05 19:32:28.086810 -> Conectando ao servidor h8 na porta 7777
+2015-06-05 19:32:28.094018 -> Enviando a mensagem: SOMA 500.0
+2015-06-05 19:32:28.112370 -> Recebi a mensagem: OK
+2015-06-05 19:32:28.118348 -> Fechando socket
+2015-06-05 19:32:28.124574 -> Como recebi tres OK, entao devo enviar COMMIT para os tres servidores.
+2015-06-05 19:32:28.130591 -> Conectando ao servidor h28 na porta 8888
+2015-06-05 19:32:28.138079 -> Enviando a mensagem: COMMIT
+2015-06-05 19:32:28.156421 -> Recebi a mensagem: None
+2015-06-05 19:32:28.162479 -> Fechando socket
+2015-06-05 19:32:28.168733 -> Conectando ao servidor h50 na porta 9999
+2015-06-05 19:32:28.176244 -> Enviando a mensagem: COMMIT
+2015-06-05 19:32:28.194161 -> Recebi a mensagem: None
+2015-06-05 19:32:28.200103 -> Fechando socket
+2015-06-05 19:32:28.206085 -> Conectando ao servidor h8 na porta 7777
+2015-06-05 19:32:28.213503 -> Enviando a mensagem: COMMIT
+2015-06-05 19:32:28.231472 -> Recebi a mensagem: None
+2015-06-05 19:32:28.237667 -> Fechando socket
+2015-06-05 19:32:28.243700 -> ==============================================================

@@ -1,0 +1,58 @@
+>> Autores:
+	Daniele Harumi Ito GRR20101243
+	Paulo Ricardo Gemniczak GRR20096237
+
+>> Introdução:
+	O trabalho implementa, utilizando a linguagem python, um protocolo 2PC ("Two-Phase Commit") em uma versão simplificada que assume que servidores e clientes jamais falham. Nossos servidores armazenam um valor float, iniciado em zero, que pode ser alterado utilizando as seguintes operações: soma, subtração, multiplicação e divisão.
+	A versão implementada utiliza uma conexão para cada troca de mensagem, ou seja, para enviar uma operação o cliente deve utilizar uma conexão para enviar a solicitação e receber a resposta, e outra conexão para enviar o COMMIT ou ABORT.
+	Formato das mensagens:
+	As mensagens possuem um byte, ou um byte seguido do valor (float) para realizar as operações. 
+
+	NOK - 0
+	OK - 1
+	ABORT - 2
+	COMMIT - 3
+	SOMA - 4[valor]
+	SUBTRACAO - 5[valor]
+	DIVISAO - 6[valor]
+	MULTIPLICACAO - 7[valor]
+
+	Obs: Considerando a seguinte mensagem: DIV 0
+	O servidor não lança exceção, porém não realiza a operação e registra no log a seguinte mensagem:
+	"Nao eh possivel dividir por 0."
+
+>> Cliente:
+	O programa cliente deve ser executado da seguinte forma: 
+	python cliente.py [ip_serv_1] [porta_serv_1] [ip_serv_2] [porta_serv_2] [ip_serv_3] [porta_serv_3] [operacao] [valor]
+
+	O argumento [operacao] pode receber os seguintes valores:
+	SOMA
+	SUB
+	DIV
+	MULT
+
+	O argumento [valor] deve ser um float (utilizar ponto e não vírgula).
+
+	O código do cliente consiste em conectar, enviar a operação e receber a resposta dos três servidores. Caso as três respostas sejam OK, então novamente ele conecta a cada servidor e envia a mensagem COMMIT. Caso pelo menos uma das respostas não seja OK, portanto NOK, então o cliente envia ABORT para cada servidor.
+
+>> Servidor:
+	O programa servidor deve ser executado da seguinte forma: python servidor.py [porta] [ip_local]
+	No argumento [porta] deve ser informado um número, que corresponde ao número da porta que o servidor irá utilizar.
+	No argumento [ip_local] deve ser informado o ip da máquina que o servidor está sendo executado.
+
+	O servidor inicia esperando uma conexão. Quando ela ocorre, ele envia a mensagem OK para este cliente, armazena seu endereço, a operação solicitada, muda seu estado para 'aguardando resposta' e volta a esperar uma conexão. Esse estado indica que o servidor deve receber uma mensagem de COMMIT ou ABORT desse cliente armazenado. Portanto, para qualquer mensagem que não seja desse cliente, a resposta será NOK. Quando o cliente armazenado envia um COMMIT, então a operação é realizada. Caso receba ABORT desse cliente a operação não é realizada. Em ambos os casos seu estado deixa de ser 'aguardando resposta'.
+	Esse ciclo se repete, e para cada conexão que o servidor receber, caso não esteja 'arguardando resposta', esse estado será ativado, e o endereço desse cliente e a operação solicitada serão armazenados.
+
+>> Arquivo funcoes.py:
+	Este arquivo contém funções que são utilizadas pelo código do servidor e do cliente, além de constantes que definem o código de cada operação.
+
+>> Testes:
+	Os testes apresentados nos logs foram realizados nas servidoras do dinf.
+	As 5 primeiras operações foram realizadas apenas pelo cliente 2 (h30) para demonstrar o funcionamento básico do trabalho.
+	Operação 1: SOMA 50
+	Operação 2: MULTIPLICACAO 3
+	Operação 3: SUBTRACAO 3.54
+	Operação 4: DIVISAO 2.88
+	Operação 5: DIVISAO 0
+
+	O próximo teste foi realizado com os dois clientes, sendo que o cliente 1 (h29) conecta com o servidor 1 e espera por 5 segundos. Então o cliente 2 (h30) comunica com os três servidores, mas recebe NOK do servidor 1 e OK dos outros dois servidores, portanto, após isso ele envia ABORT para os três. Isso acontece durante o tempo de espera do cliente 1 (h29), que quando se encerra, comunica com os outros dois servidores que já estão "desocupados", portanto, este cliente recebe OK de todos os servidores e consequentemente envia COMMIT para todos.
